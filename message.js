@@ -19,10 +19,11 @@
 $.extend({
   message: function(options) {
       var defaults={
+          title:'',
           message:' 操作成功',
-          time:'2000',
+          time:'1000000000',
           type:'success',
-          showClose:false,
+          showClose:true,
           autoClose:true,
           onClose:function(){}
       };
@@ -34,11 +35,15 @@ $.extend({
           defaults=$.extend({},defaults,options);
       }
       //message模版
-      var templateClose=defaults.showClose?'<a class="c-message--close">×</a>':'';
+      var templateClose=defaults.showClose?'<div class="c-message--close">×</div>':'';
+      var templateTitle = defaults.title !== '' ? '<h2 class="c-message__title">'+defaults.title+'</h2>':'';
       var template='<div class="c-message messageFadeInDown">'+
           '<i class=" c-message--icon c-message--'+defaults.type+'"></i>'+
+          '<div class="el-notification__group">'+
+          templateTitle +
+          '<div class="el-notification__content">'+defaults.message+'</div>'+
           templateClose+
-          '<div class="c-message--tip">'+defaults.message+'</div>'+
+          '</div>'+
       '</div>';
       var _this=this;
       var $body=$('body');

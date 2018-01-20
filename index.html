@@ -22,9 +22,9 @@
         <div class="p40">
             <p>点击调用提示</p>
             <button class="btn btn-success">成功提示</button>
-            <button class="btn btn-danger">失败提示</button>
-            <button class="btn btn-warning">警告提示</button>
-            <button class="btn btn-info">信息提醒</button>
+            <button class="btn btn-danger">成功提示</button>
+            <button class="btn btn-warning">成功提示</button>
+            <button class="btn btn-info">成功提示</button>
         </div>
         <div class="p40">
             <p>调用方式：</p>
@@ -67,23 +67,28 @@ autoClose:true,        //是否自动关闭（默认：是）
         <script>
             $(function(){
                 $('.btn-success').on('click',function(){
-                    $.message('成功');
+
+                    $.message({
+                        title:'提示',
+                        message: '成功2333333333333333333成功2333333333333333333成功2333333333333333333成功2333333333333333333成功2333333333333333333成功2333333333333333333成功2333333333333333333成功2333333333333333333'
+                    });
                 })
                 $('.btn-danger').on('click',function(){
                     $.message({
-                        message:'失败提示',
+                        title:'提示',
+                        message:'失败提示2333333333333333333',
                         type:'error'
                     });
                 })
                 $('.btn-warning').on('click',function(){
                     $.message({
-                        message:'警告提示',
+                        message:'警告提示2333333333333333333233',
                         type:'warning'
                     });
                 })
                 $('.btn-info').on('click',function(){
                     $.message({
-                        message:'信息提醒',
+                        message:'信息提醒2333333333333333333',
                         type:'info'
                     });
                 })
@@ -92,3 +97,5 @@ autoClose:true,        //是否自动关闭（默认：是）
         </script>
     </body>
 </html>
+
+
